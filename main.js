@@ -30,9 +30,11 @@ var secondiEl = document.getElementById("secondi") ;
 
 var intervallo;
 
+
+// Da qui parte un timer di 30 secondi.
 if (numeriRicorda === undefined) {
 
-    var tempo = 30 ;
+    var tempo = 5 ;
 
     intervallo = setInterval( function() {
 
@@ -42,19 +44,46 @@ if (numeriRicorda === undefined) {
 
         secondiEl.innerHTML = tempo;
 
+        if ( tempo === 0) {
+
+            clearInterval(intervallo);
+
+            // Creo un array dove inserire i numeri inseriti dall'utente
+            var numeriUtente = [] ; 
+
+            // Creo un ciclo che permette la generazione dei numeri Utente
+            while ( numeriUtente.length < 5 ) { 
+
+                var numeroUtente = parseInt(prompt("Inserisci un numero"))
+
+                if ( !numeriUtente.includes ( numeroUtente ) ) {
+
+                numeriUtente.push ( numeroUtente );
+
+                }
+
+                console.log(numeriUtente);
+
+            }
+            
+        }
+
     } , 1000)
 
-}
+} 
 
-console.log(numeriRicorda);
-
-// Da li parte un timer di 30 secondi.
+console.log(numeriComputer);
 
 
 
 
 
-// Da li parte un timer di 30 secondi.
+
+
+
+
+
+
 
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 
