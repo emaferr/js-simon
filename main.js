@@ -62,9 +62,19 @@ if (numeriRicorda === undefined) {
 
                 }
 
-                console.log(numeriUtente);
-
             }
+
+            console.log(numeriUtente);
+
+            // Creo una variabile numeri uguali ottenuta dal confronto dei due array
+
+            var numeriUguali = numeriUtente.filter(function(number){
+
+            return numeriComputer.includes(number);
+            
+            })
+
+            console.log(numeriUguali);
             
         }
 
@@ -73,6 +83,8 @@ if (numeriRicorda === undefined) {
 } 
 
 console.log(numeriComputer);
+
+
 
 
 
