@@ -1,5 +1,3 @@
-// Un alert() espone 5 numeri generati casualmente.
-
 // Creo una funzione che genera numeri random definiti fra un massimo e un minimo
 function numeriCasuali ( min , max ) {
 
@@ -23,8 +21,35 @@ while ( numeriComputer.length < 5 ) {
 
 }
 
-// Alert che mostra i numeri all'utente
-alert( "I numeri da ricordare sono: " + numeriComputer);
+// Un alert() espone 5 numeri generati casualmente.
+var numeriRicorda = alert("I numeri da ricordare sono: " + numeriComputer);
+
+var secondiEl = document.getElementById("secondi") ;
+
+// Faccio in modo che alla chiusura alert parte il timer
+
+var intervallo;
+
+if (numeriRicorda === undefined) {
+
+    var tempo = 30 ;
+
+    intervallo = setInterval( function() {
+
+        tempo--
+
+        console.log(tempo);
+
+        secondiEl.innerHTML = tempo;
+
+    } , 1000)
+
+}
+
+console.log(numeriRicorda);
+
+// Da li parte un timer di 30 secondi.
+
 
 
 
