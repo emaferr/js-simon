@@ -71,10 +71,12 @@ if (numeriRicorda === undefined) {
             var numeriUguali = numeriUtente.filter(function(number){
 
             return numeriComputer.includes(number);
-            
+
             })
 
             console.log(numeriUguali);
+
+            console.log(numeriUguali.length);
             
         }
 
