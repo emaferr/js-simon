@@ -13,14 +13,53 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css">
+
   </head>
 
   <body>
 
+    <header>
 
-    <div id="secondi">
-        30
-    </div>
+      <div class="titolo text-center">
+
+        <h1>Ricorda i numeri</h1>
+
+      </div>
+
+    </header>
+
+    <main>
+
+        <div class="timer text-center">
+
+            <span id="secondi">30</span>
+           
+        </div>
+
+        <div class="confronto my-3">
+
+            <h4 id="numeri_utente"></h4>
+
+            <h4 id="numeri_computer" class="my-3"></h4>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <div class="risultato my-4">
+
+            <h3 id="punteggio"></h3>
+
+        </div>
+
+    </footer>
+
+
+    
       
     <!-- My JavaScript -->
     <script src="./main.js"></script>

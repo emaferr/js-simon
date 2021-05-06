@@ -1,14 +1,19 @@
 // Creo una funzione che genera numeri random definiti fra un massimo e un minimo
+
 function numeriCasuali ( min , max ) {
 
     return Math.floor ( Math.random () * ( max - min +1 ) + min )
 
 } ;
 
+
 // Creo un array dove inserire i numeri generati
+
 var numeriComputer = [] ; 
 
+
 // Creo un ciclo che permette la generazione di 5 numeri casuali
+
 while ( numeriComputer.length < 5 ) {
 
     var numero = numeriCasuali ( 1 , 20 ) ;
@@ -21,10 +26,13 @@ while ( numeriComputer.length < 5 ) {
 
 }
 
+
 // Un alert() espone 5 numeri generati casualmente.
+
 var numeriRicorda = alert("I numeri da ricordare sono: " + numeriComputer);
 
 var secondiEl = document.getElementById("secondi") ;
+
 
 // Faccio in modo che alla chiusura alert parte il timer
 
@@ -32,9 +40,10 @@ var intervallo;
 
 
 // Da qui parte un timer di 30 secondi.
+
 if (numeriRicorda === undefined) {
 
-    var tempo = 5 ;
+    var tempo = 30 ;
 
     intervallo = setInterval( function() {
 
@@ -49,12 +58,14 @@ if (numeriRicorda === undefined) {
             clearInterval(intervallo);
 
             // Creo un array dove inserire i numeri inseriti dall'utente
+
             var numeriUtente = [] ; 
 
             // Creo un ciclo che permette la generazione dei numeri Utente
+
             while ( numeriUtente.length < 5 ) { 
 
-                var numeroUtente = parseInt(prompt("Inserisci un numero"))
+                var numeroUtente = parseInt(prompt("Inserisci i numeri uno per volta"))
 
                 if ( !numeriUtente.includes ( numeroUtente ) ) {
 
@@ -64,41 +75,26 @@ if (numeriRicorda === undefined) {
 
             }
 
-            console.log(numeriUtente);
+            document.getElementById("numeri_utente").innerHTML = "I numeri che hai inserito : " + numeriUtente.sort();
 
-            // Creo una variabile numeri uguali ottenuta dal confronto dei due array
+            document.getElementById("numeri_computer").innerHTML = "I numeri da indovinare : " + numeriComputer.sort();
 
-            var numeriUguali = numeriUtente.filter(function(number){
+            // Creo una variabile numeri uguali ottenuta dal confronto dei due array mediante filter e la funzione numeri_uguali
 
-            return numeriComputer.includes(number);
+            var numeriUguali = numeriUtente.filter(function(numberi_uguali){
+
+            return numeriComputer.includes(numberi_uguali);
 
             })
 
-            console.log(numeriUguali);
+            // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
-            console.log(numeriUguali.length);
-            
+            document.getElementById("punteggio").innerHTML = "Hai indovinato " + numeriUguali.length + " numeri : " + numeriUguali;
+              
         }
 
     } , 1000)
 
 } 
 
-console.log(numeriComputer);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
-
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
