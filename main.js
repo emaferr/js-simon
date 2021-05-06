@@ -67,6 +67,13 @@ if (numeriRicorda === undefined) {
 
                 var numeroUtente = parseInt(prompt("Inserisci i numeri uno per volta"))
 
+                while (numeroUtente < 1 || numeroUtente > 100 || isNaN(numeroUtente)) {
+
+                    alert("Devi inserire un numero compreso fra 1 e 100")
+
+                    numeroUtente = parseInt(prompt("Inserisci i numeri uno per volta"))
+                }
+
                 if ( !numeriUtente.includes ( numeroUtente ) ) {
 
                 numeriUtente.push ( numeroUtente );
@@ -75,9 +82,17 @@ if (numeriRicorda === undefined) {
 
             }
 
-            document.getElementById("numeri_utente").innerHTML = "I numeri che hai inserito : " + numeriUtente.sort();
+            // Ordino gli array prima di stamparli a video
 
-            document.getElementById("numeri_computer").innerHTML = "I numeri da indovinare : " + numeriComputer.sort();
+            var numeriUtenteOrdinati = numeriUtente.sort(function(a,b){return a-b});
+
+            var numeriComputerOrdinati = numeriComputer.sort(function(a,b){return a-b});
+
+            // Stampo a video il confronto fra i vari numeri
+
+            document.getElementById("numeri_utente").innerHTML = "I numeri che hai inserito : " + numeriUtenteOrdinati;
+
+            document.getElementById("numeri_computer").innerHTML = "I numeri da indovinare : " + numeriComputerOrdinati;
 
             // Creo una variabile numeri uguali ottenuta dal confronto dei due array mediante filter e la funzione numeri_uguali
 
